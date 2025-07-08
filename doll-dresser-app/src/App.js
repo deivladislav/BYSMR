@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 // Define the clothing categories and their items with placeholder images
 const categories = [
   {
-    name: "Doll Base", // New category for doll base images
+    name: "Reactor Layout", // New category for doll base images
     items: [
-      { id: "doll-base-1", name: "Doll 1", image: "https://placehold.co/200x400/E0BBE4/FFFFFF?text=Doll+1" },
-      { id: "doll-base-2", name: "Doll 2", image: "https://placehold.co/200x400/C2DFFF/000000?text=Doll+2" },
-      { id: "doll-base-3", name: "Doll 3", image: "https://placehold.co/200x400/D4EDDA/000000?text=Doll+3" },
+      { id: "doll-base-1", name: "Integral", image: "./img/LayIntegral" },
+      { id: "doll-base-2", name: "Block", image: "./img/LayBlock" },
+      { id: "doll-base-3", name: "Looped", image: "./img/LayLooped" },
     ],
   },
   {
