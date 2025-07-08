@@ -3,21 +3,21 @@ import React, { useState } from 'react';
 // Define the clothing categories and their items with placeholder images
 const categories = [
   {
-    name: "Reactor Layout", // New category for doll base images
+    name: "Reactor Layout", // New category for Reactor Layout images
     items: [
-      { id: "doll-base-1", name: "Integral", image: "./img/LayIntegral" },
-      { id: "doll-base-2", name: "Block", image: "./img/LayBlock" },
-      { id: "doll-base-3", name: "Looped", image: "./img/LayLooped" },
+      { id: "lay-1", name: "Integral", image: "https://deivladislav.github.io/BYSMR/doll-dresser-app/src/img/LayIntegral.png" },
+      { id: "lay-2", name: "Block", image: "https://deivladislav.github.io/BYSMR/doll-dresser-app/src/img/LayBlock.png" },
+      { id: "lay-3", name: "Looped", image: "https://deivladislav.github.io/BYSMR/doll-dresser-app/src/img/LayLooped.png" },
     ],
   },
   {
-    name: "Hair",
+    name: "Coolant",
     items: [
-      { id: "hair-none", name: "None", image: "" },
-      { id: "hair-brown-bob", name: "Brown Bob", image: "https://placehold.co/120x120/A0522D/FFFFFF?text=Brown+Hair" },
-      { id: "hair-blonde-ponytail", name: "Blonde Ponytail", image: "https://placehold.co/120x120/FFD700/000000?text=Blonde+Hair" },
-      { id: "hair-black-long", name: "Black Long", image: "https://placehold.co/120x120/000000/FFFFFF?text=Black+Hair" },
-      { id: "hair-white-long", name: "white Long", image: "https://placehold.co/120x120/000000/FFFFFF?text=white+Hair" },
+      { id: "cool-none", name: "None", image: "" },
+      { id: "cool-PWR", name: "PWR", image: "https://deivladislav.github.io/BYSMR/doll-dresser-app/src/img/PWRreactor.png" },
+      { id: "cool-BWR", name: "BWR", image: "https://deivladislav.github.io/BYSMR/doll-dresser-app/src/img/BWRreactor.png" },
+      //{ id: "Coolant-black-long", name: "Black Long", image: "https://placehold.co/120x120/000000/FFFFFF?text=Black+Coolant" },
+     // { id: "Coolant-white-long", name: "white Long", image: "https://placehold.co/120x120/000000/FFFFFF?text=white+Coolant" },
     ],
   },
   {
@@ -50,10 +50,10 @@ const categories = [
 ];
 
 function App() {
-  // State to keep track of the selected item for each category, including the doll base
+  // State to keep track of the selected item for each category, including the Reactor Layout
   const [selectedItems, setSelectedItems] = useState({
-    "Doll Base": categories[0].items[0], // Initialize with the first doll base
-    Hair: null,
+    "Reactor Layout": categories[0].items[0], // Initialize with the first Reactor Layout
+    Coolant: null,
     Tops: null,
     Bottoms: null,
     Shoes: null,
@@ -81,20 +81,20 @@ function App() {
         {/* Doll Display Area */}
         <div className="relative w-64 h-96 md:w-80 md:h-[400px] bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden mb-8 lg:mb-0 transform transition-transform duration-300 hover:scale-105">
           {/* Base Doll Image */}
-          {selectedItems["Doll Base"] && selectedItems["Doll Base"].image && (
+          {selectedItems["Reactor Layout"] && selectedItems["Reactor Layout"].image && (
             <img
-              src={selectedItems["Doll Base"].image}
-              alt={selectedItems["Doll Base"].name}
+              src={selectedItems["Reactor Layout"].image}
+              alt={selectedItems["Reactor Layout"].name}
               className="w-full h-full object-contain rounded-2xl"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x400/CCCCCC/000000?text=Error"; }}
             />
           )}
 
           {/* Dynamically rendered clothing items based on selection */}
-          {selectedItems.Hair && selectedItems.Hair.image && (
+          {selectedItems.Coolant && selectedItems.Coolant.image && (
             <img
-              src={selectedItems.Hair.image}
-              alt={selectedItems.Hair.name}
+              src={selectedItems.Coolant.image}
+              alt={selectedItems.Coolant.name}
               className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[30%] object-contain"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/120x120/CCCCCC/000000?text=Error"; }}
             />
